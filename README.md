@@ -5,7 +5,7 @@ Onion is the name for my *personal* WordPress boilerplate. As you may expect, th
 
 Onion uses Sass for stylesheets, so `cd`ing into the theme directory and using `sass --watch assets/scss/stylesheet.scss:assets/css/stylesheet.css` should put you right. Also note that I make use of the maps data type, so you'll need at least Sass 3.3 if you're going to be using this.
 
-Media query management and CSS grid generation lovingly stolen from [zurb/foundation](https://github.com/zurb/foundation). The included pattern primer is [querkmachine/pattern-primer](https://github.com/querkmachine/pattern-primer). The included CSS reset is [querkmachine/reset](https://github.com/querkmachine/reset). 
+Media query management and CSS grid generation lovingly stolen from [zurb/foundation](https://github.com/zurb/foundation). The included pattern primer is [querkmachine/pattern-primer](https://github.com/querkmachine/pattern-primer). The included CSS reset is [querkmachine/greyreset](https://github.com/querkmachine/greyreset). 
 
 Also included are a few WordPress plugins that I nearly always end up using. These are:
 * [Advanced Custom Fields](http://advancedcustomfields.com) by Elliot Condon
