@@ -1,0 +1,108 @@
+/**
+ * components->typography
+ */
+
+body {
+  font-family: $body-font; 
+  font-size: $base;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $header-font;
+  font-weight: 400;
+}
+
+h5, 
+h6 {
+  font-family: $body-font;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3.204em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  @media #{$medium-up} {
+    font-size: 4.806em;
+  }
+}
+
+h2 {
+  font-size: 2.742em;
+  line-height: 1.2;
+  @media #{$medium-up} {
+    font-size: 3.375em;
+  }
+}
+
+h3 {
+  font-size: 1.828em;
+  line-height: 1.15;
+  @media #{$medium-up} {
+    font-size: 2.25em;
+  }
+}
+
+h4 {
+  font-size: 1.5em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 0.949em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+p, ul, ol, dl {
+  margin: $base 0;
+  line-height: 1.5;
+}
+
+.lede {
+  font-size: 120%;
+  line-height: 1.3;
+  @media #{$medium-up} {
+    font-size: 140%;
+  }
+}
+
+.skew {
+  display: inline-block;
+  -webkit-transform: skewY(-12deg);
+     -moz-transform: skewY(-12deg);
+      -ms-transform: skewY(-12deg);
+          transform: skewY(-12deg);
+}
+
+ul, ol {
+  margin: $base/2 0;
+  padding: 0 0 0 35px;
+}
+
+dl {
+  dt {
+    font-weight: bold;
+  }
+  dd {
+    margin-left: $base*4;
+  }
+}
+
+a {
+  border-bottom: 1px dotted palette(grey, light);
+  color: palette(grey, light);
+  text-decoration: none;
+  @include transition(color .15s ease);
+  &:hover,
+  &:focus {
+    color: palette(grey);
+  }
+}

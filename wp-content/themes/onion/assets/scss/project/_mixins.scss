@@ -1,0 +1,19 @@
+/**
+ * project->mixins
+ */
+
+@mixin transition($rule...) {
+  -webkit-transition: $rule;
+     -moz-transition: $rule; 
+          transition: $rule;
+}
+
+@mixin gradient($from, $to) {
+  background-image: -webkit-gradient(linear, left top, left top, color-stop(0%, #{$from}), color-stop(100%, #{$to}));
+  background-image: -webkit-linear-gradient(0deg, #{$from} 0%, #{$to} 100%);
+  background-image:    -moz-linear-gradient(0deg, #{$from} 0%, #{$to} 100%);
+  background-image:     -ms-linear-gradient(0deg, #{$from} 0%, #{$to} 100%);
+  background-image:      -o-linear-gradient(0deg, #{$from} 0%, #{$to} 100%);
+  background-image:         linear-gradient(0deg, #{$from} 0%, #{$to} 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$from}', endColorstr='#{$to}',GradientType=1 );
+}

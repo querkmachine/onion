@@ -1,0 +1,38 @@
+/**
+ * components->grid
+ */
+
+.container {
+  width: 96%;
+  max-width: 1240px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin column($α, $β: false, $γ: false) {
+  @if $α { 
+    width: percentage(($α / $grid-total-columns));
+  } 
+  padding-right: $grid-column-gutter/2;
+  padding-left: $grid-column-gutter/2;
+  position: relative;
+  float: left;
+  @if $β { 
+    @media #{$medium-up} {
+      width: percentage(($β / $grid-total-columns));
+    }
+  } 
+  @if $γ {
+    @media #{$large-up} {  
+      width: percentage(($γ / $grid-total-columns));
+    }
+  } 
+}
+
+@mixin pull($dir, $breakpoint: $medium-up) {
+  @if $dir != none {
+    @media #{$breakpoint} {
+      float: $dir; 
+    }
+  }
+}
