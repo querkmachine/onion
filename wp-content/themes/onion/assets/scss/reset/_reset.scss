@@ -1,7 +1,8 @@
 /**
  * reset->reset
  *
- * Grey's CSS Reset v3 (Modified: 14th February 2014)
+ * Grey's CSS Reset v3.2 (Modified: 21st March 2014)
+ *
  * Combining, amongst my own changes, the very best of:
  * HTML5 Doctor's CSS reset (http://html5doctor.com/html-5-reset-stylesheet/)
  * The YUI 2 CSS Reset (http://developer.yahoo.com/yui/reset/)
@@ -11,18 +12,30 @@
  * Clearfix from Position Is Everything (http://www.positioniseverything.net/easyclearing.html)
  */
 
+
+
+/**
+ * Responsive reset 
+ */
+
 @-webkit-viewport { width: device-width; }
    @-moz-viewport { width: device-width; }
     @-ms-viewport { width: device-width; }
      @-o-viewport { width: device-width; }
         @viewport { width: device-width; }
 
+
+
+/**
+ * Generic elements 
+ */
+
 *,
 *:before,
 *:after {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; 
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html, body,
@@ -35,7 +48,7 @@ form, fieldset, legend, label, input, button, select, textarea, keygen, output, 
 details, summary, command, menu,
 table, thead, tbody, tfoot, caption, tr, th, td,
 hr {
-  margin: 0; 
+  margin: 0;
   padding: 0;
   border: none;
   background: transparent;
@@ -68,13 +81,23 @@ article, aside, figure, figcaption, footer, header, hgroup, main, nav, section, 
   display: block; /* IE6-9, FF3 */
 }
 
+figure {
+  margin: 0; /* IE8-9, S5 */
+}
+
 hr {
   -moz-box-sizing: content-box;
        box-sizing: content-box;
   display: block;
   height: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
 }
+
+
+
+/**
+ * Multimedia 
+ */ 
 
 audio, video, canvas {
   display: inline-block; /* IE8-9 */
@@ -101,23 +124,33 @@ svg:not(:root) {
   overflow: hidden; /* IE9 */
 }
 
-figure {
-  margin: 0; /* IE8-9, S5 */
-}
+
+
+/**
+ * Hyperlinks
+ */
 
 a {
   background: transparent; /* IE10 */
-  &:active,
-  &:hover {
-    outline: 0; 
-  }
-  &:focus {
-    outline: thin dotted; /* Chrome */
-  }
-  img {
-    border: none; /* IE6-9 */
-  }
 }
+
+a:active, a:hover {
+  outline: 0;
+}
+
+a:focus {
+  outline: thin dotted; /* Chrome */
+}
+
+a img {
+  border: none; /* IE6-9 */
+}
+
+
+
+/**
+ * Typography 
+ */
 
 strong, b {
   font-weight: bold;
@@ -171,7 +204,7 @@ pre, code, kbd, samp, ruby, rt, rb {
 
 mark {
   background-color: #ff9;
-  border-bottom: 1px solid #ff0;
+  border-bottom: 1px solid yellow;
 }
 
 abbr[title], dfn[title] {
@@ -179,11 +212,21 @@ abbr[title], dfn[title] {
   cursor: help;
 }
 
-nav {
-  ol, ul {
-    list-style: none;
-  }
+
+
+/**
+ * Lists
+ */
+
+nav ol, nav ul {
+  list-style: none;
 }
+
+
+
+/**
+ * Tables
+ */
 
 table {
   border-collapse: collapse;
@@ -195,6 +238,12 @@ th, td, caption {
   vertical-align: top;
 }
 
+
+
+/**
+ * Forms
+ */
+
 [hidden],
 template {
   display: none; /* IE7-9, FF3, S4 */
@@ -205,11 +254,10 @@ input, button, textarea, select, optgroup {
   padding: 0;
   border: 1px solid black;
   background: transparent;
-  font-family: inherit; 
+  font-family: inherit;
   font-size: 100%;
   font-style: inherit;
   font-weight: inherit;
-  text-rendering: optimizeLegibility;
   vertical-align: baseline;
   *vertical-align: middle; /* IE6-7 */
 }
@@ -230,11 +278,10 @@ button {
 button,
 select {
   text-transform: none; /* IE8+, FF4+, Opera */
-  -webkit-appearance: none; /* iOS, S5, Chrome (OS X) */
 }
 
 optgroup {
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 input::-moz-focus-inner,
@@ -243,12 +290,12 @@ button::-moz-focus-inner {
   border: 0; /* FF4+ */
 }
 
-button, 
-html input[type="button"], /* Android 4 */
+button,
+html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   cursor: pointer;
-  -webkit-appearance: button; /* iOS */
+  -webkit-appearance: button;/* iOS */
   *overflow: visible; /* IE7 */
 }
 
@@ -288,7 +335,7 @@ textarea {
 }
 
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.635em 0.75em;
 }
@@ -298,33 +345,40 @@ legend {
   border: 0;
 }
 
+/** 
+ * Helpful classes
+ */
+
+/* Accessible element hiding */
 .hidden {
   width: 1px;
   height: 1px;
   margin: -1px;
-  padding: 0; 
+  padding: 0;
   position: absolute;
   border: 0;
   overflow: hidden;
   clip: rect(0 0 0 0);
 }
 
-.clearfix {
-  &:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-  }
-  * html & {
-    height: 1%; /* IE6 */
-  }
-  *:first-child+html & {
-    min-height: 1px; /* IE7 */
-  }
+/* Clearfix */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
 
+* html .clearfix {
+  height: 1%; /* IE6 */
+}
+
+*:first-child + html .clearfix {
+  min-height: 1px; /* IE7 */
+}
+
+/* The best ampersand for the job */
 .amp {
   font-family: Baskerville, Palatino, "Book Antiqua", serif;
   font-style: italic;
