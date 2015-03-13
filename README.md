@@ -1,6 +1,8 @@
 Onion
 =====
 
+**This project is no longer maintained.**
+
 Onion is the name for my *personal* WordPress boilerplate. As you may expect, this might not be perfect for your needs and uses, the point is that it's perfect for mine. **THIS IS NOT A BOOTSTRAP!** There are no predefined interface elements, no ready-made WordPress templates, and very little in way of preconfigured anythings. This is intended as a starting point, not a shortcut. 
 
 Onion uses Sass for stylesheets, so `cd`ing into the theme directory and using `sass --watch assets/scss/stylesheet.scss:assets/css/stylesheet.css` should put you right. Also note that I make use of the maps data type, so you'll need at least Sass 3.3 if you're going to be using this.
